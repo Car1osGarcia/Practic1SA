@@ -12,7 +12,7 @@ pipeline {
         stage('Test') {
             steps {
                 dir('Frontend') {
-                    sh 'npm run test --watch=false'
+                    sh 'ng test --progress false --watch false'
                 }
                 
             }
