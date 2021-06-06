@@ -17,5 +17,14 @@ pipeline {
                 
             }
         }
+        stage('Build') {
+            steps {
+                dir('Frontend') {
+                    sh 'npm run build'
+                }
+                
+            }
+        }
+        
     }
 }
