@@ -25,6 +25,13 @@ pipeline {
                 
             }
         }
-        
+        stage('Deploy') {
+            steps {
+                dir('Frontend') {
+                    sh 'ls'
+                }
+                
+            }
+        }
     }
 }
