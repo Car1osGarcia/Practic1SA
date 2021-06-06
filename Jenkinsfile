@@ -28,7 +28,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 dir('Frontend') {
-                    sh 'cp dist/Frontend/* /var/www/html'
+                    sh 'mv dist/Frontend/* /var/www/html'
                 }
                 
             }
