@@ -3,33 +3,25 @@ pipeline {
     stages {
         stage('Install') {
             steps {
-                dir('Frontend') {
-                    sh 'npm install'
-                }
+                dir('Frontend') {sh 'npm install'}
                 
             }
         }
         stage('Test') {
             steps {
-                dir('Frontend') {
-                    sh 'ng test --progress false --watch false'
-                }
+                dir('Frontend') { sh 'ng test --progress false --watch false'}
                 
             }
         }
         stage('Build') {
             steps {
-                dir('Frontend') {
-                    sh 'npm run build'
-                }
+                dir('Frontend') { sh 'npm run build'}
                 
             }
         }
         stage('Deploy') {
             steps {
-                dir('Frontend') {
-                    sh 'mv dist/Frontend/* /var/www/html'
-                }
+                dir('Frontend') { sh 'mv dist/Frontend/* /var/www/html'}
                 
             }
         }
