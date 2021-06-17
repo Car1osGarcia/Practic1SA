@@ -1,7 +1,7 @@
 pipeline {
     agent any
     stages {
-        stage('Install') {
+        stage('Build') {
             steps {
                 dir('Frontend') {sh 'npm install'}
                 
@@ -13,7 +13,7 @@ pipeline {
                 
             }
         }
-        stage('Build') {
+        stage('Delivery') {
             steps {
                 dir('Frontend') { sh 'npm run build'}
                 
